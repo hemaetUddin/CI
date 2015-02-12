@@ -6,12 +6,14 @@
 	{
 		
 		function index()
-		{
-			echo "Rinto";
+		{	
+			$this->load->model('blog_model');
+			$data['records']=$this->blog_model->getAll();
+			$this->load->view('home', $data);
 		}
 
-		function dosomething(){
-			echo "Do something";
+		function  about(){
+			$this->load->view('about');
 		}
 	}
 
